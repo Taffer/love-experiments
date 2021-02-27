@@ -1,6 +1,11 @@
-MIT License
+# License
 
-Copyright (c) 2021 Chris Herborth
+Things in this repo are mine (and released under the MIT License), except where
+indicated in the Credits section of the [README.md](README.md) file.
+
+## MIT License
+
+Copyright ⓒ 2020 [Chris Herborth](mailto:chrish@pobox.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
