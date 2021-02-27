@@ -23,7 +23,8 @@ Library credits go here.
 
 ### Graphics
 
-Graphics resource credits go here.
+* `character_robot_jump.png` - From Kenny.nl's freely usable
+  [Toon Characters 1](https://kenney.nl/assets/toon-characters-1) collection.
 
 ### Sounds
 
