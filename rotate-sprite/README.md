@@ -44,10 +44,11 @@ Library credits go here.
 
 * `character_robot_jump.png` - From Kenny.nl's freely usable
   [Toon Characters 1](https://kenney.nl/assets/toon-characters-1) collection.
-* `character_robot_jump-2y.png` - Kenny.nl's robot sprite, tiled using:
+* `character_robot_jump-2y.png` - Kenny.nl's robot sprite, tiled using
+  `montage` from ImageMagick:
 
   ``` sh
-  % montage character_robot_jump.png character_robot_jump.png -tile 1x2 -background none character_robot_jump-2y.png
+  montage character_robot_jump.png character_robot_jump.png -tile 1x2 -background none character_robot_jump-2y.png
   ```
 
 ### Sounds
