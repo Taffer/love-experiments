@@ -6,7 +6,15 @@
 -- All the stuff we've loaded already.
 gameResources = {
     fonts = {},
-    images = {}
+    images = {},
+
+    text = {
+        '12345678901234567890',
+        '         1         2',
+        'The quick brown fox',
+        'jumps over the lazy',
+        'dog.'
+    }
 }
 
 -- Current state of the game.
@@ -15,7 +23,9 @@ gameState = {
     buff_start = 1, -- Which line to start drawing at.
     max_lines = 5, -- Maximum number of lines to display.
 
-    dy = 16 -- Height of the font.
+    dy = 16, -- Height of the font.
+
+    text_idx = 1 -- Index into the text resource.
 }
 
 -- Love callbacks.
@@ -54,7 +64,14 @@ function love.keyreleased(key)
         love.event.quit()
     elseif key == 'space' then
         local gameState = gameState
-        table.insert(gameState.buff, string.format('More text! %d', #gameState.buff))
+        local gameResources = gameResources
+
+        table.insert(gameState.buff, gameResources.text[gameState.text_idx])
+
+        gameState.text_idx = gameState.text_idx + 1
+        if gameState.text_idx > #gameResources.text then
+            gameState.text_idx = 1
+        end
 
         if #gameState.buff > gameState.max_lines then
             gameState.buff_start = gameState.buff_start + 1
