@@ -12,6 +12,8 @@ The goal is to do this with one draw call, rather than two. I haven't thought
 of a way to make this work without doubling the width (or height) of the
 sprite, depending on which way you want to rotate.
 
+![Experiment 1 - Scrolling Texture](experiment-1.png)
+
 You can run it from this directory with:
 
 ```sh
