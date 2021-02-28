@@ -12,6 +12,21 @@ The goal is to do this with one draw call, rather than two. I haven't thought
 of a way to make this work without doubling the width (or height) of the
 sprite, depending on which way you want to rotate.
 
+You can run it from this directory with:
+
+```sh
+./love .
+```
+
+If you're using Sublime Text:
+
+1. Open the project.
+1. Under Tools -> Build System, choose "Launch Löve2D". You only need to pick
+   the build system once, it's stored in the workspace file.
+1. Choose Tools -> Build or press its shortcut (Ctrl+B).
+
+Press Escape to exit the demo.
+
 ## Credits
 
 This is written in Lua, using the [LÖVE](https://love2d.org/) 2D game engine. I
