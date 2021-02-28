@@ -8,6 +8,10 @@ I want to see if there's a way to do it without duplicating and modifying the
 sprite. I'm thinking that ancient platforms (think Commodore C=64 or Apple ][)
 wouldn't have the memory to waste for this sort of thing.
 
+The goal is to do this with one draw call, rather than two. I haven't thought
+of a way to make this work without doubling the width (or height) of the
+sprite, depending on which way you want to rotate.
+
 ## Credits
 
 This is written in Lua, using the [LÖVE](https://love2d.org/) 2D game engine. I
