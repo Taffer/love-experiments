@@ -1,6 +1,6 @@
-# Experiment 1 - Sprite Rotation
+# Experiment 1 - Scrolling Texture
 
-Old games used a technique to animate sprites where they shifted the sprint one
+Old games used a technique to animate textures where they shifted the sprite one
 row or column per frame. An easy/cheesy way to do this is to just produce a set
 of sprites that are shifted already and treat them as individual frames.
 

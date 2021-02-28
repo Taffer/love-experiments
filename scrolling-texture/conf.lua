@@ -6,7 +6,7 @@
 function love.conf(t)
     -- "Native" window size matches the Switch. Some day, I'd like to port
     -- things there.
-    t.window.title = "Expriment 1 - Sprite Rotation"
+    t.window.title = "Expriment 1 - Scrolling Texture"
     t.window.width = 1280
     t.window.height = 720
 
