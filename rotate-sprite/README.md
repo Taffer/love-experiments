@@ -36,10 +36,6 @@ Development](https://www.edx.org/course/cs50s-introduction-to-game-development).
 Check the `.lua` file headers for individual credits; stuff I wrote is released
 under the [MIT license](LICENSE.md).
 
-### Libraries
-
-Library credits go here.
-
 ### Graphics
 
 * `character_robot_jump.png` - From Kenny.nl's freely usable
@@ -50,11 +46,3 @@ Library credits go here.
   ``` sh
   montage character_robot_jump.png character_robot_jump.png -tile 1x2 -background none character_robot_jump-2y.png
   ```
-
-### Sounds
-
-Sound resource credits go here.
-
-### Music
-
-Music resource credits go here.
