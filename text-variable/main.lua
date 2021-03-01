@@ -1,4 +1,4 @@
--- Experiment 2 - Monospaced Text
+-- Experiment 3 - Variable Width Text
 --
 -- By Chris Herborth (https://github.com/Taffer)
 -- MIT license, see LICENSE.md for details.
@@ -12,7 +12,7 @@ gameResources = {
         'Next is too long:',
         'The quick brown fox jumps over the lazy dog.',
         'Better split.',
-        'That text was too long.',
+        'That text was too long. What about this line?',
         'Oops, so was that.',
         'We need to fix it.'
     }
@@ -24,10 +24,11 @@ gameState = {
 
     max_lines = 5,    -- Maximum number of lines to display.
     max_columns = 20, -- Maximum number of columns to display.
+    max_width = 0,    -- max_columns * the font's em width.
     margin = 1,       -- Pixels of margin between the text and its rectangle.
 
     dy = 0, -- Height of the font.
-    dx = 0, -- "Em" width of the font (all characters, as it's monospaced).
+    dx = 0, -- "Em" width of the font
 
     text_idx = 1 -- Index into the text resource.
 }
@@ -38,11 +39,12 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     local gameResources = gameResources
-    gameResources.fonts.mono = love.graphics.newFont('resources/LiberationMono-Bold.ttf', 16)
+    gameResources.fonts.mono = love.graphics.newFont('resources/LiberationSerif-Bold.ttf', 16)
 
     local gameState = gameState
     gameState.dy = gameResources.fonts.mono:getHeight()
     gameState.dx = gameResources.fonts.mono:getWidth('M')
+    gameState.max_width = gameState.max_columns * gameState.dx
 end
 
 function love.draw()
@@ -89,8 +91,10 @@ end
 local function splitAt(str, width)
     local parts = {}
     local tmp_str = ""
+    local gameResources = gameResources
+    local space = gameResources.fonts.mono:getWidth(' ')
     for i in str:gmatch('%S+') do
-        if tmp_str:len() + i:len() < width then
+        if gameResources.fonts.mono:getWidth(tmp_str) + gameResources.fonts.mono:getWidth(i) + space < width then
             tmp_str = tmp_str .. ' ' .. i
         else
             table.insert(parts, trim(tmp_str))
@@ -107,10 +111,11 @@ end
 -- Add text to the display buffer.
 local function addText(text)
     local gameState = gameState
+    local gameResources = gameResources
 
-    -- If the line is more than gameState.max_columns, we need to split it.
-    if text:len() > gameState.max_columns then
-        local parts = splitAt(text, gameState.max_columns)
+    -- If the line is more than gameState.max_width, we need to split it.
+    if gameResources.fonts.mono:getWidth(text) > gameState.max_width then
+        local parts = splitAt(text, gameState.max_width)
         for _, v in ipairs(parts) do
             table.insert(gameState.buff, v)
         end

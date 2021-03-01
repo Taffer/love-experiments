@@ -1,13 +1,15 @@
-# Experiment 3 - Monospaced Text
+# Experiment 3 - Variabl Width Text
 
 This is an attempt to create a simple text/console type of window. Print text
 to it, render it, and scroll up when you reach the bottom. Think of the
 text area in the bottom-right of the
 [Ultima V](https://wiki.ultimacodex.com/wiki/File:U5amig.jpg), for example.
 
-We'll make an area that can display five lines of about 20 characters each.
+We'll make an area that can display five lines of about 20-ish characters each.
 The text area is the same size as the monospaced experiment, but this time
 we're using a variable-width font.
+
+![Experiment 3 - Variable Width Text](experiment-3.png)
 
 You can run it from this directory with:
 
