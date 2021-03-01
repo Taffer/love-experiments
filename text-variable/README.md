@@ -1,4 +1,4 @@
-# Experiment 3 - Variabl Width Text
+# Experiment 3 - Variable Width Text
 
 This is an attempt to create a simple text/console type of window. Print text
 to it, render it, and scroll up when you reach the bottom. Think of the
