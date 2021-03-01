@@ -1,0 +1,17 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 3 - Variable Width Text",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Launch Löve2D",
+            "shell_cmd": "love .",
+            "file_regex": "^Error: (?:[^:]+: )?([^: ]+?):(\\d+):() ([^:]*)$",
+        },
+    ],
+}
