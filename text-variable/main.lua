@@ -39,11 +39,11 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     local gameResources = gameResources
-    gameResources.fonts.mono = love.graphics.newFont('resources/LiberationSerif-Bold.ttf', 16)
+    gameResources.fonts.variable = love.graphics.newFont('resources/LiberationSerif-Bold.ttf', 16)
 
     local gameState = gameState
-    gameState.dy = gameResources.fonts.mono:getHeight()
-    gameState.dx = gameResources.fonts.mono:getWidth('M')
+    gameState.dy = gameResources.fonts.variable:getHeight()
+    gameState.dx = gameResources.fonts.variable:getWidth('M')
     gameState.max_width = gameState.max_columns * gameState.dx
 end
 
@@ -57,7 +57,7 @@ function love.draw()
     love.graphics.clear()
 
     love.graphics.setColor(1, 1, 1, 1) -- white
-    love.graphics.setFont(gameResources.fonts.mono)
+    love.graphics.setFont(gameResources.fonts.variable)
     love.graphics.print('Press [Space] to add text.', 10, 10)
 
     -- Draw a rectangle so we can see if we go over the text area.
@@ -92,9 +92,9 @@ local function splitAt(str, width)
     local parts = {}
     local tmp_str = ""
     local gameResources = gameResources
-    local space = gameResources.fonts.mono:getWidth(' ')
+    local space = gameResources.fonts.variable:getWidth(' ')
     for i in str:gmatch('%S+') do
-        if gameResources.fonts.mono:getWidth(tmp_str) + gameResources.fonts.mono:getWidth(i) + space < width then
+        if gameResources.fonts.variable:getWidth(tmp_str) + gameResources.fonts.variable:getWidth(i) + space < width then
             tmp_str = tmp_str .. ' ' .. i
         else
             table.insert(parts, trim(tmp_str))
@@ -114,7 +114,7 @@ local function addText(text)
     local gameResources = gameResources
 
     -- If the line is more than gameState.max_width, we need to split it.
-    if gameResources.fonts.mono:getWidth(text) > gameState.max_width then
+    if gameResources.fonts.variable:getWidth(text) > gameState.max_width then
         local parts = splitAt(text, gameState.max_width)
         for _, v in ipairs(parts) do
             table.insert(gameState.buff, v)
