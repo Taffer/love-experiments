@@ -5,7 +5,11 @@ to it, render it, and scroll up when you reach the bottom. Think of the
 text area in the bottom-right of the
 [Ultima V](https://wiki.ultimacodex.com/wiki/File:U5amig.jpg), for example.
 
-We'll make an area that can display five lines of 20 characters each.
+We'll make an area that can display five lines of 20 characters each. It
+automatically wraps lines that are too long, and there's a rectangle around
+the text area so you can be sure it's not over-drawing.
+
+![Experiment 2 - Monospaced Text](experiment-2.png)
 
 You can run it from this directory with:
 
