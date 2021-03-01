@@ -9,18 +9,19 @@ gameResources = {
     images = {},
 
     text = {
-        '12345678901234567890',
-        '         1         2',
-        'The quick brown fox',
-        'jumps over the lazy',
-        'dog.'
+        'Next is too long:',
+        'The quick brown fox jumps over the lazy dog.',
+        'Better split.',
+        'That text was too long.',
+        'Oops, so was that.',
+        'We need to fix it.'
     }
 }
 
 -- Current state of the game.
 gameState = {
     buff = {},        -- Individual lines of text.
-    buff_start = 1,   -- Which line to start drawing at.
+
     max_lines = 5,    -- Maximum number of lines to display.
     max_columns = 20, -- Maximum number of columns to display.
     margin = 1,       -- Pixels of margin between the text and its rectangle.
@@ -67,9 +68,54 @@ function love.draw()
     love.graphics.setColor(1, 1, 1, 1) -- white
 
     local delta = 0
-    for idx = gameState.buff_start, math.min(#gameState.buff, gameState.buff_start + gameState.max_lines) do
+    local buff_start = 1
+    local buff_end = #gameState.buff
+    if #gameState.buff > gameState.max_lines then
+        buff_start = buff_end - gameState.max_lines + 1
+    end
+
+    for idx = buff_start, buff_end do
         love.graphics.print(gameState.buff[idx], text_x, text_y + delta)
         delta = delta + gameState.dy
+    end
+end
+
+-- Trim whitespace from a string.
+local function trim(str)
+    return str:match( "^%s*(.-)%s*$" )
+end
+
+-- Split a string near width characters.
+local function splitAt(str, width)
+    local parts = {}
+    local tmp_str = ""
+    for i in str:gmatch('%S+') do
+        if tmp_str:len() + i:len() < width then
+            tmp_str = tmp_str .. ' ' .. i
+        else
+            table.insert(parts, trim(tmp_str))
+            tmp_str = trim(i)
+        end
+    end
+    if tmp_str:len() > 0 then
+        table.insert(parts, tmp_str)
+    end
+
+    return parts
+end
+
+-- Add text to the display buffer.
+local function addText(text)
+    local gameState = gameState
+
+    -- If the line is more than gameState.max_columns, we need to split it.
+    if text:len() > gameState.max_columns then
+        local parts = splitAt(text, gameState.max_columns)
+        for _, v in ipairs(parts) do
+            table.insert(gameState.buff, v)
+        end
+    else
+        table.insert(gameState.buff, text)
     end
 end
 
@@ -81,15 +127,12 @@ function love.keyreleased(key)
         local gameState = gameState
         local gameResources = gameResources
 
-        table.insert(gameState.buff, gameResources.text[gameState.text_idx])
+        addText(gameResources.text[gameState.text_idx])
 
+        -- Next line of test text, or go back to the start.
         gameState.text_idx = gameState.text_idx + 1
         if gameState.text_idx > #gameResources.text then
             gameState.text_idx = 1
-        end
-
-        if #gameState.buff > gameState.max_lines then
-            gameState.buff_start = gameState.buff_start + 1
         end
     end
 end
