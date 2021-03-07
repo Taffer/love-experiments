@@ -40,7 +40,7 @@ under the [MIT license](LICENSE.md).
 
 ### Graphics
 
-* `character_robot_jump.png` - From Kenny.nl's freely usable
+* `character_robot_jump.png` - From Kenney.nl's freely usable
   [Toon Characters 1](https://kenney.nl/assets/toon-characters-1) collection.
 * `character_robot_jump-2y.png` - Kenny.nl's robot sprite, tiled using
   `montage` from ImageMagick:
