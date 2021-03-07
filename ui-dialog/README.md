@@ -31,10 +31,6 @@ under the [MIT license](LICENSE.md).
 
 ### Graphics
 
-* `HONK.png` - The Goose from House House's amazing
-  [Untitled Goose Game](https://goose.game/), used without permission. I'm not
-  affiliated with House House in any way, other than as a happy customer. You
-  should buy Untitled Goose Game, it's *amazingly fun*. I have it on my Switch!
 * `rpg_gui_v1` -
   [RPG GUI construction kit v1.0](https://opengameart.org/content/rpg-gui-construction-kit-v10)
   by Lamoot on OpenGameArt.org.
