@@ -8,9 +8,8 @@ I want to see if there's a way to do it without duplicating and modifying the
 sprite. I'm thinking that ancient platforms (think Commodore C=64 or Apple ][)
 wouldn't have the memory to waste for this sort of thing.
 
-The goal is to do this with one draw call, rather than two. I haven't thought
-of a way to make this work without doubling the width (or height) of the
-sprite, depending on which way you want to rotate.
+The goal is to do this with one draw call, rather than two. You can use the
+texture's wrap mode (via `setWrap()`) to make it infinite.
 
 ![Experiment 1 - Scrolling Texture](experiment-1.png)
 

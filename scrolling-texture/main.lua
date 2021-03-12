@@ -28,10 +28,10 @@ function love.load()
 
     local gameResources = gameResources
     gameResources.images.robot = love.graphics.newImage('resources/character_robot_jump.png')
-    gameResources.images.robot2y = love.graphics.newImage('resources/character_robot_jump-2y.png')
+    gameResources.images.robot:setWrap('repeat')
 
     local gameState = gameState
-    gameState.max_y = gameResources.images.robot2y:getHeight() / 2
+    gameState.max_y = gameResources.images.robot:getHeight()
 end
 
 function love.draw()
@@ -44,9 +44,9 @@ function love.draw()
     -- Animate the texture.
     -- Is using a quad's viewport better than making a new quad?
     local quad = love.graphics.newQuad(0, 0 + gameState.dy,
-        gameResources.images.robot2y:getWidth(), gameResources.images.robot2y:getHeight() / 2,
-        gameResources.images.robot2y:getWidth(), gameResources.images.robot2y:getHeight())
-    love.graphics.draw(gameResources.images.robot2y, quad, gameState.sprite2_x, gameState.sprite2_y)
+        gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight(),
+        gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight())
+    love.graphics.draw(gameResources.images.robot, quad, gameState.sprite2_x, gameState.sprite2_y)
 end
 
 function love.update(dt)
