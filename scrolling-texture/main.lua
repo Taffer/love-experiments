@@ -18,7 +18,9 @@ gameState = {
     sprite1_y = 100,
 
     sprite2_x = 200, -- Draw the animated sprite here.
-    sprite2_y = 100
+    sprite2_y = 100,
+
+    quad = nil
 }
 
 -- Love callbacks.
@@ -29,6 +31,9 @@ function love.load()
     local gameResources = gameResources
     gameResources.images.robot = love.graphics.newImage('resources/character_robot_jump.png')
     gameResources.images.robot:setWrap('repeat')
+    gameState.quad = love.graphics.newQuad(0, 0,
+        gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight(),
+        gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight())
 
     local gameState = gameState
     gameState.max_y = gameResources.images.robot:getHeight()
@@ -42,11 +47,11 @@ function love.draw()
     love.graphics.draw(gameResources.images.robot, gameState.sprite1_x, gameState.sprite1_y)
 
     -- Animate the texture.
-    -- Is using a quad's viewport better than making a new quad?
-    local quad = love.graphics.newQuad(0, 0 + gameState.dy,
+    -- Using a quad's viewport is better than making a new quad.
+    gameState.quad:setViewport(0, 0 + gameState.dy,
         gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight(),
         gameResources.images.robot:getWidth(), gameResources.images.robot:getHeight())
-    love.graphics.draw(gameResources.images.robot, quad, gameState.sprite2_x, gameState.sprite2_y)
+    love.graphics.draw(gameResources.images.robot, gameState.quad, gameState.sprite2_x, gameState.sprite2_y)
 end
 
 function love.update(dt)
