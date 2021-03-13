@@ -28,6 +28,9 @@ function Button:initialize(x, y, text, resources)
 
     self.selected = false
     self.intersected = false
+
+    -- Event handlers
+    self.onClick = nil
 end
 
 function Button:draw()
@@ -70,13 +73,17 @@ function Button:onMouseMove(x, y)
     self.intersected = true
 end
 
-function Button:onMousePress(x, y, _)
+function Button:onMousePress(x, y)
     if not self:intersects(x, y) then
         return
     end
 
     -- We're ignoring the button, click with anything.
     self.selected = true
+
+    if self.onClick then
+        self:onClick()
+    end
 end
 
 function Button:onMouseRelease(x, y, _)
@@ -104,6 +111,7 @@ gameState = {
 function love.load()
     math.randomseed(os.time())
     love.graphics.setDefaultFilter('nearest', 'nearest')
+    io.stdout:setvbuf("no") -- Don't buffer console output.
 
     local gameResources = gameResources
     gameResources.fonts.variable = love.graphics.newFont('resources/fonts/LiberationSerif-Bold.ttf', 16)
@@ -115,6 +123,9 @@ function love.load()
     -- Let's make two buttons.
     local gameState = gameState
     local button = Button:new(100, 100, 'Button 1', gameResources)
+    button.onClick = function (click_button)
+        print('Mouse clicked on ' .. click_button.text)
+    end
     table.insert(gameState.ui, button)
     button = Button:new(250, 250, '# Two', gameResources)
     table.insert(gameState.ui, button)
@@ -142,7 +153,7 @@ function love.keyreleased(key)
     end
 end
 
-function love.mousemoved(x, y, dx, dy, isTouch)
+function love.mousemoved(x, y)
     local gameState = gameState
 
     for i in ipairs(gameState.ui) do
@@ -150,15 +161,15 @@ function love.mousemoved(x, y, dx, dy, isTouch)
     end
 end
 
-function love.mousepressed(x, y, button, isTouch, presses)
+function love.mousepressed(x, y, button)
     local gameState = gameState
 
     for i in ipairs(gameState.ui) do
-        gameState.ui[i]:onMousePress(x, y, button)
+        gameState.ui[i]:onMousePress(x, y, button, mouse_click, i)
     end
 end
 
-function love.mousereleased(x, y, button, isTouch, presses)
+function love.mousereleased(x, y, button)
     local gameState = gameState
 
     for i in ipairs(gameState.ui) do
