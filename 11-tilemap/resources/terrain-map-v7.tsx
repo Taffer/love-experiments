@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.4" tiledversion="1.4.3" name="terrain-map-v7" tilewidth="32" tileheight="32" tilecount="16384" columns="16">
- <image source="terrain-map-v7.png" width="512" height="31488"/>
+ <image source="terrain-map-v7-repacked.png" width="4096" height="4096"/>
  <terraintypes>
   <terrain name="Dirt_Brown" tile="0"/>
   <terrain name="Dirt_Dark" tile="1"/>
