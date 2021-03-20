@@ -1,4 +1,4 @@
--- Experiment 10 - UI Spinbox
+-- Experiment 11 - Tilemap
 --
 -- By Chris Herborth (https://github.com/Taffer)
 -- MIT license, see LICENSE.md for details.
