@@ -6,6 +6,16 @@ I'm very slowly working on a couple of projects using LÖVE, but I also need
 to figure out how to do stuff. I'm dumping it all in here in case it's useful
 for someone else to learn from it.
 
+The experiments:
+
+|Effects, Animation                          |Text                                    |UI                            |Tilemaps                                |
+|--------------------------------------------|----------------------------------------|------------------------------|----------------------------------------|
+|[01-scrolling-texture](01-scrolling-texture)|[02-text-monospaced](02-text-monospaced)|[06-ui-dialog](06-ui-dialog)  |[11-tilemap](11-tilemap)                |
+|[05-image-fades](05-image-fades)            |[03-text-variable](03-text-variable)    |[09-ui-button](09-ui-button)  |[12-tilemap-minimap](12-tilemap-minimap)|
+|[07-animated-icon](07-animated-icon)        |[04-text-entry](04-text-entry)          |[10-ui-spinbox](10-ui-spinbox)|                                        |
+|[13-rect-fades](13-rect-fades)              |[08-text-styled](08-text-styled)        |                              |                                        |
+|[14-animated-sprite](14-animated-sprite)    |[15-text-dropshadow](15-text-dropshadow)|                              |                                        |
+
 ## Bribe me
 
 Want to bribe me to work on more experiments, faster? Want to suggest an
