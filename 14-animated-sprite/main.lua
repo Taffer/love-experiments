@@ -203,17 +203,17 @@ function love.update(dt)
 
         gameState.sara_y = gameState.sara_y - 1
     end
-    if go_left then
-        gameState.sara:setFacing('left')
-        gameState.sara:setState('walk')
-
-        gameState.sara_x = gameState.sara_x - 1
-    end
     if go_down then
         gameState.sara:setFacing('front')
         gameState.sara:setState('walk')
 
         gameState.sara_y = gameState.sara_y + 1
+    end
+    if go_left then
+        gameState.sara:setFacing('left')
+        gameState.sara:setState('walk')
+
+        gameState.sara_x = gameState.sara_x - 1
     end
     if go_right then
         gameState.sara:setFacing('right')
