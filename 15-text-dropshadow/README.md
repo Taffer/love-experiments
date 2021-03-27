@@ -1,9 +1,9 @@
-# Experiment 14 - Animated Sprite
+# Experiment 15 - Text Dropshadows
 
-In this experiment, we'll animate one of the Liberated Pixel Cup sprites
-(OpenGameArt's mascot, Sara). Use WASD or arrow keys to walk around.
+This experiment draws text with different dropshadows, so we can see how to
+make our white text more readable on a light coloured background.
 
-![Experiment 14 - Animated Sprite](experiment-14.png)
+![Experiment 15 - Text Dropshadows](experiment-15.png)
 
 You can run it from this directory with:
 
@@ -29,25 +29,12 @@ Development](https://www.edx.org/course/cs50s-introduction-to-game-development).
 Check the `.lua` file headers for individual credits; stuff I wrote is released
 under the [MIT license](LICENSE.md).
 
-* [middleclass](https://github.com/kikito/middleclass) by Enrique García Cota
-
 ### Graphics
 
 * `grass.png` - A
   [grass tile](https://opengameart.org/content/grass-tiles-0), by Invincible.
-* `LiberationMono-Bold.ttf` - An open source font from the
+* `LiberationMono-Bold.ttf` and `LiberationSerif-Bold.ttf` - An open source
+  font from the
   [liberationfonts](https://github.com/liberationfonts/liberation-fonts) repo;
   this is licensed under the
   [SIL Open Font License](https://github.com/liberationfonts/liberation-fonts/blob/master/LICENSE).
-* [`LPC_Sara`](https://opengameart.org/content/lpc-sara) - Stephen "Redshrike"
-  Challener as graphic artist and William.Thompsonj as contributor. Mandi Paugh
-  is the original artist of Sara and creator of the
-  [OGA](https://opengameart.org/) mascot.
-
-LPC sprite sheet documentation:
-
-* Each row is a complete animation cycle.
-* Rows are mostly in groups of four based on facing: away, left, forward, right.
-* Animation rows are: Spellcast, Thrust, Walk, Slash, Shoot, Hurt (only one
-  facing for Hurt).
-* Are 64x64 on the sprite sheet.
