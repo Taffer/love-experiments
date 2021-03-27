@@ -31,6 +31,8 @@ Development](https://www.edx.org/course/cs50s-introduction-to-game-development).
 Check the `.lua` file headers for individual credits; stuff I wrote is released
 under the [MIT license](LICENSE.md).
 
+* [middleclass](https://github.com/kikito/middleclass) by Enrique García Cota
+
 ### Graphics
 
 * `terrain-map-v7.png` -
