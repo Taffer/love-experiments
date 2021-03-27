@@ -151,6 +151,12 @@ function love.load()
     gameResources.quads.sara_walk_right = sara_walk_right
 
     gameState.grass_batch = love.graphics.newSpriteBatch(gameResources.images.grass, 880)
+    gameState.grass_batch:clear()
+    for y = 0, 720, 32 do
+        for x = 0, (1280 - 32), 32 do
+            gameState.grass_batch:add(gameResources.quads.grass, x, y)
+        end
+    end
 
     gameState.sara = Actor:new(gameResources, gameResources.images.sara)
 end
@@ -161,12 +167,6 @@ function love.draw()
 
     love.graphics.clear(0, 0, 0, 1)
     love.graphics.setColor(1, 1, 1, 1)
-    gameState.grass_batch:clear()
-    for y = 0, 720, 32 do
-        for x = 0, (1280 - 32), 32 do
-            gameState.grass_batch:add(gameResources.quads.grass, x, y)
-        end
-    end
     love.graphics.draw(gameState.grass_batch)
 
     -- Draw a rectangle to show which tile the actor's feet are in.
