@@ -45,8 +45,7 @@ function love.draw()
     local text_x = 100 -- Location of the text area.
     local text_y = 100
 
-    love.graphics.setColor(0, 0, 0, 1) -- black
-    love.graphics.clear()
+    love.graphics.clear(0, 0, 0, 1) -- black
 
     love.graphics.setColor(1, 1, 1, 1) -- white
     love.graphics.setFont(gameResources.fonts.mono)
