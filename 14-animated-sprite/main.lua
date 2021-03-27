@@ -188,28 +188,38 @@ end
 function love.update(dt)
     local gameState = gameState
 
-    if gameState.keys['w'] or gameState.keys['up'] then
+    local go_up = gameState.keys['w'] or gameState.keys['up']
+    local go_left = gameState.keys['a'] or gameState.keys['left']
+    local go_down = gameState.keys['s'] or gameState.keys['down']
+    local go_right = gameState.keys['d'] or gameState.keys['right']
+
+    if not (go_up or go_left or go_down or go_right) then
+        gameState.sara:setState('idle') -- default state
+    end
+
+    if go_up then
         gameState.sara:setFacing('back')
         gameState.sara:setState('walk')
 
         gameState.sara_y = gameState.sara_y - 1
-    elseif gameState.keys['a'] or gameState.keys['left'] then
+    end
+    if go_left then
         gameState.sara:setFacing('left')
         gameState.sara:setState('walk')
 
         gameState.sara_x = gameState.sara_x - 1
-    elseif gameState.keys['s'] or gameState.keys['down'] then
+    end
+    if go_down then
         gameState.sara:setFacing('front')
         gameState.sara:setState('walk')
 
         gameState.sara_y = gameState.sara_y + 1
-    elseif gameState.keys['d'] or gameState.keys['right'] then
+    end
+    if go_right then
         gameState.sara:setFacing('right')
         gameState.sara:setState('walk')
 
         gameState.sara_x = gameState.sara_x + 1
-    else
-        gameState.sara:setState('idle')
     end
 
     -- Clamp Sara's position.
