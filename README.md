@@ -8,13 +8,13 @@ for someone else to learn from it.
 
 The experiments:
 
-|Effects, Animation                          |Text                                    |UI                            |Tilemaps                                |
-|--------------------------------------------|----------------------------------------|------------------------------|----------------------------------------|
-|[01-scrolling-texture](01-scrolling-texture)|[02-text-monospaced](02-text-monospaced)|[06-ui-dialog](06-ui-dialog)  |[11-tilemap](11-tilemap)                |
-|[05-image-fades](05-image-fades)            |[03-text-variable](03-text-variable)    |[09-ui-button](09-ui-button)  |[12-tilemap-minimap](12-tilemap-minimap)|
-|[07-animated-icon](07-animated-icon)        |[04-text-entry](04-text-entry)          |[10-ui-spinbox](10-ui-spinbox)|                                        |
-|[13-rect-fades](13-rect-fades)              |[08-text-styled](08-text-styled)        |[16-joystick](16-joystick)    |                                        |
-|[14-animated-sprite](14-animated-sprite)    |[15-text-dropshadow](15-text-dropshadow)|                              |                                        |
+|Effects, Animation                          |Text                                    |UI                                      |Tilemaps                                |
+|--------------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
+|[01-scrolling-texture](01-scrolling-texture)|[02-text-monospaced](02-text-monospaced)|[06-ui-dialog](06-ui-dialog)            |[11-tilemap](11-tilemap)                |
+|[05-image-fades](05-image-fades)            |[03-text-variable](03-text-variable)    |[09-ui-button](09-ui-button)            |[12-tilemap-minimap](12-tilemap-minimap)|
+|[07-animated-icon](07-animated-icon)        |[04-text-entry](04-text-entry)          |[10-ui-spinbox](10-ui-spinbox)          |                                        |
+|[13-rect-fades](13-rect-fades)              |[08-text-styled](08-text-styled)        |[16-joystick](16-joystick)              |                                        |
+|[14-animated-sprite](14-animated-sprite)    |[15-text-dropshadow](15-text-dropshadow)|[17-sprite-joystick](17-sprite-joystick)|                                        |
 
 ## Bribe me
 
