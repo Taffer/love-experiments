@@ -1,10 +1,11 @@
-# Experiment 11 - Tilemap
+# Experiment 18 - Tilemap Layers
 
 In this experiment, we'll draw a viewport onto a tilemap that was created
 in [Tiled](https://www.mapeditor.org/). Use the arrow keys or WASD to move
-the viewport around the map.
+the viewport around the map. This expands on *Experiment 11* by working with
+a map that has several layers.
 
-![Experiment 11 - Tilemap](experiment-11.png)
+![Experiment 18 - Tilemap Layers](experiment-18.png)
 
 You can run it from this directory with:
 

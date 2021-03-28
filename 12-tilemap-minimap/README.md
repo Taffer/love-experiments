@@ -35,6 +35,10 @@ under the [MIT license](LICENSE.md).
 
 ### Graphics
 
+* `LiberationSerif-Bold.ttf` - An open source font from the
+  [liberationfonts](https://github.com/liberationfonts/liberation-fonts) repo;
+  this is licensed under the
+  [SIL Open Font License](https://github.com/liberationfonts/liberation-fonts/blob/master/LICENSE).
 * `terrain-map-v7.png` -
   [LPC Terrains](https://opengameart.org/content/lpc-terrains) from OpenGameArt:
 
