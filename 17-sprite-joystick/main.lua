@@ -182,7 +182,7 @@ function love.draw()
 
     love.graphics.setColor(0, 0, 0, 1)
     love.graphics.setFont(gameResources.fonts.mono)
-    love.graphics.print('Use the gamepad, WASD arrow keys to walk.', 10, 10)
+    love.graphics.print('Use the gamepad, WASD, or arrow keys to walk.', 10, 10)
 end
 
 local function inRange(v, upper, lower)
