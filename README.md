@@ -16,6 +16,7 @@ The experiments:
 |[13-rect-fades](13-rect-fades)              |[08-text-styled](08-text-styled)        |[16-joystick](16-joystick)              |                                        |
 |[14-animated-sprite](14-animated-sprite)    |[15-text-dropshadow](15-text-dropshadow)|[17-sprite-joystick](17-sprite-joystick)|                                        |
 |[19-simple-lighting](19-simple-lighting)    |                                        |                                        |                                        |
+|[20-lpc-sprite](20-lpc-sprite)              |                                        |                                        |                                        |
 
 ## Bribe me
 
