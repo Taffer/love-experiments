@@ -1,0 +1,17 @@
+{
+    "folders":
+    [
+        {
+            "name": "Experiment 21 - Blocked Sprite",
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Launch Löve2D",
+            "shell_cmd": "love .",
+            "file_regex": "^Error: (?:[^:]+: )?([^: ]+?):(\\d+):() ([^:]*)$",
+        },
+    ],
+}
