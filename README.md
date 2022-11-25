@@ -1,3 +1,11 @@
+# Moved
+
+This repo is has been replaced by: https://codeberg.org/Taffer/love-experiments
+
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
+
+Everything in this repo should be considered out of date.
+
 # LÖVE Experiments
 
 Some experiments using the [LÖVE](https://love2d.org/) game framework and Lua.
